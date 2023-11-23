@@ -5,14 +5,15 @@
 // 46 -> нет
 // 161 -> да
 
-// Console.Write("Введите число: ");
-// int number = Convert.ToInt32(Console.ReadLine());
-// bool result = MultipleTwoDigits(number);
-// Console.WriteLine(result ? "Да" : "Нет");
-// bool MultipleTwoDigits(int num)
-
-// {
-//     return num % 7 == 0 && num % 23 == 0;
-// }
-
 Console.WriteLine("Введите число");
+int number = Convert.ToInt32(Console.ReadLine());
+if(number % 7 == 0 && number % 23 == 0)
+{
+    Console.WriteLine("Данное число кратно 7 и 23");
+}
+else
+{
+    Console.WriteLine("Данное число НЕ кратно 7 и 23");
+}
+
+
