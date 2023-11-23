@@ -4,25 +4,47 @@
 // точка.
 
 
-Console.WriteLine("Введите координаты точки");
-Console.Write("X: ");
-int xCoordinate = Convert.ToInt32(Console.ReadLine());
-Console.Write("Y: ");
-int yCoordinate = Convert.ToInt32(Console.ReadLine());
-int quarter = Quarter(xCoordinate, yCoordinate);
-string result = quarter > 0
-? $"Указанные координаты соответствуют четверти -> {quarter}"
-: "Введены некорректные координаты";
-Console.WriteLine(result);
+Console.WriteLine("Введите координаты точки 'x'");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите координаты точки 'y'");
+int y = Convert.ToInt32(Console.ReadLine());
 
-int Quarter(int x, int y)
+if (x > 0 && y > 0)
 {
-    if(x > 0 && y > 0) return 1;
-    if(x < 0 && y > 0) return 2;
-    if(x < 0 && y < 0) return 3;
-    if(x > 0 && y < 0) return 4;
-    return 0;
+    Console.WriteLine("Точка принадлежит четверти I");
 }
+if (x < 0 && y > 0)
+{
+    Console.WriteLine("Точка принадлежит четверти II");
+}
+if (x < 0 && y < 0)
+{
+    Console.WriteLine("Точка принадлежит четверти III");
+}
+if (x > 0 && y < 0)
+{
+    Console.WriteLine("Точка принадлежит четверти IV");
+}
+
+// Console.WriteLine("Введите координаты точки");
+// Console.Write("X: ");
+// int xCoordinate = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Y: ");
+// int yCoordinate = Convert.ToInt32(Console.ReadLine());
+// int quarter = Quarter(xCoordinate, yCoordinate);
+// string result = quarter > 0
+// ? $"Указанные координаты соответствуют четверти -> {quarter}"
+// : "Введены некорректные координаты";
+// Console.WriteLine(result);
+
+// int Quarter(int x, int y)
+// {
+//     if(x > 0 && y > 0) return 1;
+//     if(x < 0 && y > 0) return 2;
+//     if(x < 0 && y < 0) return 3;
+//     if(x > 0 && y < 0) return 4;
+//     return 0;
+// }
 
 
 // Console.WriteLine("Введите координаты точки");
