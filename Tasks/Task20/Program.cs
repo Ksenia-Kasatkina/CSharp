@@ -5,42 +5,32 @@
 // [1 -5 6]
 // => [-1 5 -6]
 
-
-
 int ReadInt(string text)
 {
-Console.Write(text);
-return Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(text);
+    return Convert.ToInt32(Console.ReadLine());
 }
 
 int[] GenerateArray(int size, int leftRange, int rightRange)
 {
-int[] tempArray = new int[size];
-Random rand = new Random();
-
-for (int i = 0; i < size; i++)
-{
-tempArray[i] = rand.Next(leftRange, rightRange + 1);
+    int[] tempArray = new int[size];
+    Random rand = new Random();
+    for (int i = 0; i < size; i++)
+        tempArray[i] = rand.Next(leftRange, rightRange + 1);
+    return tempArray;
 }
-
-return tempArray;
-}
-
 void PrintArray(int[] array)
 {
-System.Console.WriteLine("[" + string.Join(", ", array) + "]");
+    Console.WriteLine("[" + string.Join(", ", array) + "]");
 }
-void FindNumber(int[] array, int N)
+void ChangeSign(int[] array)
 {
-for(int i = 0; i < array.Length; i++)
-{
-if(array[i] == N)
-{
-System.Console.WriteLine("Да");
-return;
-}
+    for (int i = 0; i < array.Length; i++)
+        array[i] = -array[i];
 }
 
-System.Console.WriteLine("Нет");
-}
-
+int size = ReadInt("Задайте размер массива: ");
+int[] myArray = GenerateArray(size, -10, 10);
+PrintArray(myArray);
+ChangeSign(myArray);
+PrintArray(myArray);
